@@ -1,0 +1,20 @@
+let location = navigator.geolocation.getCurrentPosition(success, error, options)
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+function success(pos) {
+  var crd = pos.coords;
+  var crdArr = [crd.latitude,crd.longitude,crd.accuracy]
+  return crdArr
+}
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+for(i = 0; i<=2; i++){
+  console.log(location[i])
+}
